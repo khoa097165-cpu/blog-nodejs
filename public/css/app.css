@@ -18,7 +18,11 @@
   --foreground-primary: hsl(218, 23%, 23%);
   --foreground-secondary: hsl(216, 15%, 52%);
   --foreground-tertiary: hsl(214, 20%, 69%);
+<<<<<<< HEAD
   --accent: hsl(229, 76%, 66%);
+=======
+  --accent: hsl(24, 92%, 47%);
+>>>>>>> b34f0d4eb4f80542c5da2f14de561ae484da7d90
 }
 
 .dark-theme {
