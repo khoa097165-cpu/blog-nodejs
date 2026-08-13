@@ -1,51 +1,63 @@
-const Blog = require('./models/Blogs');
-const { mongooseToObject } = require('../../util/mongoose');
-const { request } = require('express');
-class BlogController {
+const Blog = require('../models/Blogs');
 
-    // [GET] /blogs/:slug 
-    show(req, res, next) {
-        Blog.findOne({ slug: req.params.slug })
-            .then(blog => res.render('blogs/show', { blog: mongooseToObject(blog) }))
-            .catch(next);
-    }
+class BlogController {
 
     // [GET] /blogs/create
     create(req, res, next) {
-        res.render('blogs/create');
+        res.render('create');
     }
 
     // [POST] /blogs/store
     store(req, res, next) {
-        const blog = new Blog(req.body);
+        const formData = req.body;
+
+        const blog = new Blog(formData);
+
         blog.save()
-            .then(() => res.redirect('/'))
+            .then(() => {
+                res.redirect('/');
+            })
             .catch(error => {
-                console.log(error);
+                next(error);
             });
     }
 
-    // [GET] /courses/:id/edit
+    // [GET] /blogs/:slug
+    show(req, res, next) {
+        // Code show của bạn
+    }
+        // [GET] /blogs/:id/edit
     edit(req, res, next) {
-        Blog.findById(req.params.id)
-            .then(blogs => res.render('blogs/edit', { blogs: mongooseToObject(blogs) }))
+        // Tìm bài viết theo ID lấy từ URL
+        Blog.findById(req.params.id).lean()
+            .then(blog => res.render('edit', { blog: blog }))
             .catch(next);
     }
-
-    // [PUT] /blogs/:id
+        // [PUT] /blogs/:id
     update(req, res, next) {
+        // Tham số 1: Điều kiện tìm kiếm (Tìm theo _id)
+        // Tham số 2: Dữ liệu mới (Lấy toàn bộ từ req.body)
         Blog.updateOne({ _id: req.params.id }, req.body)
-            .then(() => res.redirect('/me/stored/blogs'))
+            .then(() => res.redirect('/')) // Sửa xong quay về Trang chủ
             .catch(next);
     }
-
-    // [DELETE] /blogs/:id
+        // [DELETE] /blogs/:id
     destroy(req, res, next) {
         Blog.deleteOne({ _id: req.params.id })
-            .then(() => res.redirect('back'))
+            .then(() => res.redirect('back')) // Xóa xong tải lại trang hiện tại
             .catch(next);
     }
-
+    // [GET] /blogs/my-blogs
+myBlogs(req, res, next) {
+    Blog.find({})
+        .lean()
+        .then(blogs => {
+            res.render('my-blogs', {
+                blogs: blogs
+            });
+        })
+        .catch(next);
+}
 }
 
-module.exports = new BlogController;
+module.exports = new BlogController();
