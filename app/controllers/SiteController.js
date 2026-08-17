@@ -1,16 +1,26 @@
 const Blog = require('../models/Blogs');
 
 class SiteController {
-    // [GET] /
-    index(req, res, next) {
-        Blog.find({})
-            .sort({ createdAt: -1 })
-            .lean()
-            .then((blogs) => {
-                res.render('home', { blogs });
-            })
-            .catch(next);
-    }
+
+// [GET] /
+index(req, res, next) {
+    const page = Number(req.query.page) || 1;
+    const perPage = 4;
+
+    Blog.find({})
+        .sort({ createdAt: -1 })
+        .lean()
+        .then((allBlogs) => {
+
+            const start = (page - 1) * perPage;
+            const blogs = allBlogs.slice(start, start + perPage);
+
+            res.render('home', {
+                blogs
+            });
+        })
+        .catch(next);
+}
 
     // [GET] /about
     about(req, res) {

@@ -1,0 +1,37 @@
+<section class="blog-detail">
+    <div class="container">
+
+       
+
+        <h1 class="h1">
+            {{blog.name}}
+        </h1>
+
+        {{#if blog.image}}
+            <div style="margin: 30px 0;">
+                <img
+                    src="{{blog.image}}"
+                    alt="{{blog.name}}"
+                    style="
+                        width: 100%;
+                        max-width: 900px;
+                        border-radius: 10px;
+                    "
+                >
+            </div>
+        {{/if}}
+
+        <div class="blog-content">
+            <p class="blog-text" style="
+                display: block;
+                font-size: 18px;
+                line-height: 1.8;
+            ">
+                {{blog.description}}
+            </p>
+        </div>
+<a href="/" class="btn btn-secondary" style="margin-bottom: 30px;">
+            ← Quay lại
+        </a>
+    </div>
+</section>

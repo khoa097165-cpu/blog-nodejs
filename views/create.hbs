@@ -1,5 +1,5 @@
-<div class="mt-4">
-    <h3>Đăng bài Blog mới</h3>
+<div class="container form-container">
+    <h1 class="form-title">Đăng bài Blog mới</h1>
 
     <form method="POST" action="/blogs/store">
 
@@ -7,10 +7,9 @@
             <label for="name">Tiêu đề bài viết</label>
             <input
                 type="text"
-                class="form-control"
                 id="name"
                 name="name"
-                required
+                class="form-control"
             >
         </div>
 
@@ -18,9 +17,9 @@
             <label for="description">Mô tả ngắn</label>
             <input
                 type="text"
-                class="form-control"
                 id="description"
                 name="description"
+                class="form-control"
             >
         </div>
 
@@ -28,9 +27,9 @@
             <label for="image">Link hình ảnh</label>
             <input
                 type="text"
-                class="form-control"
                 id="image"
                 name="image"
+                class="form-control"
             >
         </div>
 
@@ -38,14 +37,14 @@
             <label for="slug">Đường dẫn tĩnh (Slug)</label>
             <input
                 type="text"
-                class="form-control"
                 id="slug"
                 name="slug"
+                class="form-control"
                 placeholder="VD: bai-viet-so-1"
             >
         </div>
 
-        <button type="submit" class="btn btn-primary mt-2">
+        <button type="submit" class="btn btn-primary">
             Đăng bài
         </button>
 

@@ -10,7 +10,6 @@
             </h1>
 
             <p class="h3">
-                Specialized in a11y and Core Web Vitals
             </p>
 
             <div class="btn-group">
@@ -33,9 +32,11 @@
 
             <div class="img-box">
 
-                <img src="/img/hot.png"
-                     alt="Julia Walker"
-                     class="hero-img">
+                <img
+                    src="/img/namle1.png"
+                    alt="Nam Le"
+                    class="hero-img"
+                >
 
                 <div class="shape shape-1"></div>
                 <div class="shape shape-2"></div>
@@ -47,6 +48,8 @@
     </div>
 
 </section>
+
+
 <section class="blog">
 
     <div class="container">
@@ -60,11 +63,14 @@
             <div class="blog-card">
 
                 <div class="blog-card-banner">
+
                     <img
                         src="{{this.image}}"
                         alt="{{this.name}}"
                         width="250"
-                        class="blog-banner-img">
+                        class="blog-banner-img"
+                    >
+
                 </div>
 
                 <div class="blog-content-wrapper">
@@ -74,7 +80,10 @@
                     </button>
 
                     <h3>
-                        <a href="/blogs/{{this.slug}}" class="h3">
+                        <a
+                            href="/blogs/{{this.slug}}"
+                            class="h3"
+                        >
                             {{this.name}}
                         </a>
                     </h3>
@@ -91,6 +100,27 @@
 
         </div>
 
+
+
+
+        </div>
+
+        <!-- PHÂN TRANG -->
+        <div class="pagination-wrapper">
+
+            <a href="/?page=1" class="pagination-btn">
+                1
+            </a>
+
+            <a href="/?page=2" class="pagination-btn">
+                2
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
     </div>
 
 </section>
