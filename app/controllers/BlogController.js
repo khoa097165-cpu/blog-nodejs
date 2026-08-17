@@ -84,6 +84,47 @@ class BlogController {
             })
             .catch(next);
     }
+
+
+// [GET] /search
+search(req, res, next) {
+    const keyword = (req.query.q || '').trim();
+
+    if (!keyword) {
+        return res.render('search', {
+            blogs: [],
+            keyword: ''
+        });
+    }
+
+    Blog.find({
+        $or: [
+            {
+                name: {
+                    $regex: keyword,
+                    $options: 'i'
+                }
+            },
+            {
+                description: {
+                    $regex: keyword,
+                    $options: 'i'
+                }
+            }
+        ]
+    })
+        .lean()
+        .then((blogs) => {
+            console.log('Từ khóa:', keyword);
+            console.log('Số bài tìm thấy:', blogs.length);
+
+            res.render('search', {
+                blogs: blogs,
+                keyword: keyword
+            });
+        })
+        .catch(next);
+}
 }
 
 module.exports = new BlogController();

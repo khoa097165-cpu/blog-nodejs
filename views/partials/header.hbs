@@ -2,14 +2,25 @@
     <div class="container">
         <nav class="navbar">
 
-            <!-- Logo -->
+            <!-- LOGO -->
             <a href="/">
-                <img src="/img/tintuc.png" alt="SimpleBlog logo" width="150" class="logo-light">
-                <img src="/img/tintuc.png" alt="SimpleBlog logo" width="150" class="logo-dark">
+                <img
+                    src="/img/tintuc.png"
+                    alt="Tin Tức"
+                    width="150"
+                    class="logo-light"
+                >
+                <img
+                    src="/img/tintuc.png"
+                    alt="Tin Tức"
+                    width="150"
+                    class="logo-dark"
+                >
             </a>
 
-            <!-- Mobile buttons -->
+            <!-- MOBILE BUTTON -->
             <div class="btn-group">
+
                 <button class="theme-btn theme-btn-mobile light">
                     <ion-icon name="moon" class="moon"></ion-icon>
                     <ion-icon name="sunny" class="sun"></ion-icon>
@@ -18,76 +29,111 @@
                 <button class="nav-menu-btn">
                     <ion-icon name="menu-outline"></ion-icon>
                 </button>
+
             </div>
 
-            <!-- Desktop Menu -->
+            <!-- DESKTOP -->
             <div class="flex-wrapper">
 
                 <ul class="desktop-nav">
 
                     <li>
-                        <a href="/" class="nav-link">Trang Chủ</a>
+                        <a href="/" class="nav-link">
+                            Trang Chủ
+                        </a>
                     </li>
 
                     <li>
-                        <a href="/about" class="nav-link">Về Tôi</a>
+                        <a href="/about" class="nav-link">
+                            Về Tôi
+                        </a>
                     </li>
 
                     <li>
-                        <a href="/contact" class="nav-link">Liên hệ</a>
+                        <a href="/contact" class="nav-link">
+                            Liên Hệ
+                        </a>
                     </li>
 
                     <li>
-                        <a href="/search" class="nav-link">Tìm kiếm</a>
+                        <a href="/search" class="nav-link">
+                            Tìm Kiếm
+                        </a>
                     </li>
 
-                    <li>
-                        <a href="/login" class="nav-link">Đăng Nhập</a>
-                    </li>
+                    {{#if user}}
+
+                    <!-- ================= ĐÃ ĐĂNG NHẬP ================= -->
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"
-                           href="#"
-                           data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Tài Khoản Của Tôi
+
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            {{user.username}}
                         </a>
 
                         <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item" href="/login">
-                                    Đăng Nhập
-                                </a>
-                            </li>
-
-                            <li><hr class="dropdown-divider"></li>
 
                             <li>
-                                <a class="dropdown-item" href="/blogs/create">
+                                <a
+                                    class="dropdown-item"
+                                    href="/blogs/create"
+                                >
                                     Tạo Bài Viết
                                 </a>
                             </li>
 
-                            <li><hr class="dropdown-divider"></li>
-
                             <li>
-                                <a class="dropdown-item" href="/me/stored/blogs">
+                                <a
+                                    class="dropdown-item"
+                                    href="/me/stored/blogs"
+                                >
                                     Bài Viết Của Tôi
                                 </a>
                             </li>
 
-                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
 
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a
+                                    class="dropdown-item"
+                                    href="/logout"
+                                >
                                     Đăng Xuất
                                 </a>
                             </li>
+
                         </ul>
+
                     </li>
+
+                    {{else}}
+
+                    <!-- ================= CHƯA ĐĂNG NHẬP ================= -->
+
+                    <li>
+                        <a href="/login" class="nav-link">
+                            Đăng Nhập
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/register" class="nav-link">
+                            Đăng Ký
+                        </a>
+                    </li>
+
+                    {{/if}}
 
                 </ul>
 
+                <!-- DARK MODE -->
                 <button class="theme-btn theme-btn-desktop light">
                     <ion-icon name="moon" class="moon"></ion-icon>
                     <ion-icon name="sunny" class="sun"></ion-icon>
@@ -95,7 +141,8 @@
 
             </div>
 
-            <!-- Mobile Menu -->
+            <!-- ================= MOBILE MENU ================= -->
+
             <div class="mobile-nav">
 
                 <button class="nav-close-btn">
@@ -104,41 +151,98 @@
 
                 <div class="wrapper">
 
-                    <p class="h3 nav-title">Main Menu</p>
+                    <p class="h3 nav-title">
+                        Menu
+                    </p>
 
                     <ul>
-    <li class="nav-item">
-        <a href="/" class="nav-link">Trang Chủ</a>
-    </li>
 
-    <li class="nav-item">
-        <a href="/about" class="nav-link">Về Tôi</a>
-    </li>
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">
+                                Trang Chủ
+                            </a>
+                        </li>
 
-    <li class="nav-item">
-        <a href="/contact" class="nav-link">Liên Hệ</a>
-    </li>
+                        <li class="nav-item">
+                            <a href="/about" class="nav-link">
+                                Về Tôi
+                            </a>
+                        </li>
 
-    <li class="nav-item">
-        <a href="/search" class="nav-link">Tìm Kiếm</a>
-    </li>
+                        <li class="nav-item">
+                            <a href="/contact" class="nav-link">
+                                Liên Hệ
+                            </a>
+                        </li>
 
-    <li class="nav-item">
-        <a href="/login" class="nav-link">Đăng Nhập</a>
-    </li>
+                        <li class="nav-item">
+                            <a href="/search" class="nav-link">
+                                Tìm Kiếm
+                            </a>
+                        </li>
 
-    <li class="nav-item">
-        <a href="/blogs/create" class="nav-link">
-            Tạo Bài Viết
-        </a>
-    </li>
+                        {{#if user}}
 
-    <li class="nav-item">
-        <a href="/me/stored/blogs" class="nav-link">
-            Bài Viết Của Tôi
-        </a>
-    </li>
-</ul>
+                        <!-- ĐÃ ĐĂNG NHẬP -->
+
+                        <li class="nav-item">
+                            <span class="nav-link">
+                                Xin chào {{user.username}}
+                            </span>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                href="/blogs/create"
+                                class="nav-link"
+                            >
+                                Tạo Bài Viết
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                href="/me/stored/blogs"
+                                class="nav-link"
+                            >
+                                Bài Viết Của Tôi
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                href="/logout"
+                                class="nav-link"
+                            >
+                                Đăng Xuất
+                            </a>
+                        </li>
+
+                        {{else}}
+
+                        <!-- CHƯA ĐĂNG NHẬP -->
+
+                        <li class="nav-item">
+                            <a
+                                href="/login"
+                                class="nav-link"
+                            >
+                                Đăng Nhập
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                href="/register"
+                                class="nav-link"
+                            >
+                                Đăng Ký
+                            </a>
+                        </li>
+
+                        {{/if}}
+
+                    </ul>
 
                 </div>
 

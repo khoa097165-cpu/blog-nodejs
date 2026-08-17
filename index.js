@@ -1,14 +1,12 @@
 require('dotenv').config();
 const express = require('express');
-// ... các code khác
 
 const morgan = require('morgan');
 const { engine } = require('express-handlebars');
 const methodOverride = require('method-override');
+const session = require('express-session');
 
-// Kết nối Database
 const db = require('./config/db');
-
 const route = require('./routes');
 
 const app = express();
@@ -29,7 +27,22 @@ app.use(
     })
 );
 
-// Ghi đè phương thức HTTP thông qua tham số _method trên URL
+// ==================== SESSION ====================
+
+app.use(session({
+    secret: 'tin-tuc-secret',
+    resave: false,
+    saveUninitialized: false
+}));
+
+// Cho tất cả view .hbs biết tài khoản đang đăng nhập
+app.use((req, res, next) => {
+    res.locals.user = req.session.user;
+    next();
+});
+
+// ==================== METHOD OVERRIDE ====================
+
 app.use(methodOverride('_method'));
 
 app.use(express.json());

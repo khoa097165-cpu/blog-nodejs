@@ -1,30 +1,81 @@
 <div class="container form-container">
-    <h2 class="h2">Tìm kiếm bài viết</h2>
 
-    <form action="/search" method="GET" class="mt-4">
+    <h2 class="form-title">Tìm kiếm bài viết</h2>
+
+    <form action="/search" method="GET">
 
         <div class="form-group">
             <label for="search-input">Từ khóa</label>
+
             <input
                 type="text"
                 name="q"
-                class="form-control"
                 id="search-input"
-                placeholder="Nhập từ khóa..."
+                class="form-control"
+                value="{{keyword}}"
+                placeholder="Nhập tên bài viết..."
             >
         </div>
 
-        <div class="form-group mt-3">
-            <label for="type">Loại tìm kiếm</label>
-            <select name="type" id="type" class="form-select">
-                <option value="post">Bài viết</option>
-                <option value="author">Tác giả</option>
-            </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary mt-3">
+        <button type="submit" class="btn btn-primary">
             Tìm kiếm
         </button>
 
     </form>
+
+    {{#if keyword}}
+
+        <h3 class="form-title search-title">
+            Kết quả cho: "{{keyword}}"
+        </h3>
+
+        {{#if blogs}}
+
+            {{#each blogs}}
+
+                <div class="blog-card">
+
+                    {{#if this.image}}
+                        <div class="blog-card-banner">
+                            <img
+                                src="{{this.image}}"
+                                alt="{{this.name}}"
+                                class="blog-banner-img"
+                            >
+                        </div>
+                    {{/if}}
+
+                    <div class="blog-content-wrapper">
+
+                        <h3 class="h3">
+                            {{this.name}}
+                        </h3>
+
+                        <p class="blog-text">
+                            {{this.description}}
+                        </p>
+
+                        <a
+                            href="/blogs/{{this.slug}}"
+                            class="btn btn-primary"
+                        >
+                            Xem bài viết
+                        </a>
+
+                    </div>
+
+                </div>
+
+            {{/each}}
+
+        {{else}}
+
+            <p class="no-result">
+                Không tìm thấy bài viết nào.
+            </p>
+
+        {{/if}}
+
+    {{/if}}
+
 </div>

@@ -1884,4 +1884,47 @@ footer li {
     visibility: visible !important;
     opacity: 1 !important;
 }
+.register-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #6b7890;
+}
+
+.register-link a {
+    margin-left: 5px;
+    color: #587bea;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.register-link a:hover {
+    color: #3f62d0;
+    text-decoration: underline;
+}
+.form-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.form-container .form-title {
+    text-align: left;
+    margin-bottom: 35px;
+}
+
+.form-container .form-group {
+    margin-bottom: 25px;
+}
+
+.form-container .btn-primary {
+    margin-top: 5px;
+}
+
+.register-link {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
 }
