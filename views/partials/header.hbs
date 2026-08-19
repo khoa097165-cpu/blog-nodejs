@@ -1,5 +1,6 @@
 <header>
     <div class="container">
+
         <nav class="navbar">
 
             <!-- LOGO -->
@@ -10,6 +11,7 @@
                     width="150"
                     class="logo-light"
                 >
+
                 <img
                     src="/img/tintuc.png"
                     alt="Tin Tức"
@@ -17,6 +19,7 @@
                     class="logo-dark"
                 >
             </a>
+
 
             <!-- MOBILE BUTTON -->
             <div class="btn-group">
@@ -31,6 +34,7 @@
                 </button>
 
             </div>
+
 
             <!-- DESKTOP -->
             <div class="flex-wrapper">
@@ -61,9 +65,10 @@
                         </a>
                     </li>
 
+
                     {{#if user}}
 
-                    <!-- ================= ĐÃ ĐĂNG NHẬP ================= -->
+                    <!-- ĐÃ ĐĂNG NHẬP -->
 
                     <li class="nav-item dropdown">
 
@@ -115,7 +120,7 @@
 
                     {{else}}
 
-                    <!-- ================= CHƯA ĐĂNG NHẬP ================= -->
+                    <!-- CHƯA ĐĂNG NHẬP -->
 
                     <li>
                         <a href="/login" class="nav-link">
@@ -133,6 +138,7 @@
 
                 </ul>
 
+
                 <!-- DARK MODE -->
                 <button class="theme-btn theme-btn-desktop light">
                     <ion-icon name="moon" class="moon"></ion-icon>
@@ -141,8 +147,8 @@
 
             </div>
 
-            <!-- ================= MOBILE MENU ================= -->
 
+            <!-- MOBILE MENU -->
             <div class="mobile-nav">
 
                 <button class="nav-close-btn">
@@ -181,9 +187,8 @@
                             </a>
                         </li>
 
-                        {{#if user}}
 
-                        <!-- ĐÃ ĐĂNG NHẬP -->
+                        {{#if user}}
 
                         <li class="nav-item">
                             <span class="nav-link">
@@ -220,8 +225,6 @@
 
                         {{else}}
 
-                        <!-- CHƯA ĐĂNG NHẬP -->
-
                         <li class="nav-item">
                             <a
                                 href="/login"
@@ -249,5 +252,54 @@
             </div>
 
         </nav>
+
+
+        <!-- ================= THANH CHỦ ĐỀ ================= -->
+        <!-- CHỈ HIỆN Ở TRANG CHỦ -->
+
+        {{#if showTopicBar}}
+
+<div class="topic-bar">
+
+    <div class="topic-container">
+
+        <a href="/" class="topic-item">
+            Mới nhất
+        </a>
+
+        <a href="/blogs?category=cong-nghe" class="topic-item">
+            Công nghệ
+        </a>
+
+        <a href="/blogs?category=the-thao" class="topic-item">
+            Thể thao
+        </a>
+
+        <a href="/blogs?category=giai-tri" class="topic-item">
+            Giải trí
+        </a>
+
+        <a href="/blogs?category=doi-song" class="topic-item">
+            Đời sống
+        </a>
+
+        <a href="/blogs?category=kinh-te" class="topic-item">
+            Kinh tế
+        </a>
+
+        <a href="/blogs?category=du-lich" class="topic-item">
+            Du lịch
+        </a>
+
+        <a href="/blogs?category=suc-khoe" class="topic-item">
+            Sức khỏe
+        </a>
+
+    </div>
+
+</div>
+
+{{/if}}
+
     </div>
 </header>

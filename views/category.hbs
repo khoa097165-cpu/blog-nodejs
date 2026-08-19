@@ -1,0 +1,54 @@
+<div class="container form-container">
+
+    <h2 class="form-title">
+        Bài viết theo chủ đề
+    </h2>
+
+    {{#if blogs}}
+
+        {{#each blogs}}
+
+            <div class="blog-card">
+
+                {{#if image}}
+                    <div class="blog-card-banner">
+                        <img
+                            src="{{image}}"
+                            alt="{{name}}"
+                            class="blog-banner-img"
+                        >
+                    </div>
+                {{/if}}
+
+                <div class="blog-content-wrapper">
+
+                    <h3 class="h3">
+                        {{name}}
+                    </h3>
+
+                    <p class="blog-text">
+                        {{description}}
+                    </p>
+
+                    <a
+                        href="/blogs/{{slug}}"
+                        class="btn btn-primary"
+                    >
+                        Xem bài viết
+                    </a>
+
+                </div>
+
+            </div>
+
+        {{/each}}
+
+    {{else}}
+
+        <p class="no-result">
+            Chưa có bài viết nào trong chủ đề này.
+        </p>
+
+    {{/if}}
+
+</div>

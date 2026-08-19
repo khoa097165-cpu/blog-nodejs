@@ -1,23 +1,32 @@
 const express = require('express');
+
 const router = express.Router();
+
 const blogController = require('../app/controllers/BlogController');
 
-// Route tạo bài viết
+// Trang tạo bài viết
 router.get('/create', blogController.create);
+
+// Trang danh sách / lọc theo chủ đề
+router.get('/', blogController.index);
+
+// Lưu bài viết
 router.post('/store', blogController.store);
 
+// Bài viết của tôi
 router.get('/my-blogs', blogController.myBlogs);
 
-// Route sửa bài viết (Lưu ý: tham số ID truyền vào URL)
+// Sửa bài viết
 router.get('/:id/edit', blogController.edit);
+
+// Cập nhật bài viết
 router.put('/:id', blogController.update);
 
-// Route xóa bài viết
+// Xóa bài viết
 router.delete('/:id', blogController.destroy);
 
-// Route xem chi tiết động luôn để dưới cùng
+// Xem chi tiết bài viết
+// PHẢI để cuối cùng
 router.get('/:slug', blogController.show);
-
-
 
 module.exports = router;

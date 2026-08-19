@@ -4,8 +4,12 @@
 
     <form action="/search" method="GET">
 
+        <!-- TỪ KHÓA -->
         <div class="form-group">
-            <label for="search-input">Từ khóa</label>
+
+            <label for="search-input">
+                Từ khóa
+            </label>
 
             <input
                 type="text"
@@ -15,64 +19,138 @@
                 value="{{keyword}}"
                 placeholder="Nhập tên bài viết..."
             >
+
         </div>
 
-        <button type="submit" class="btn btn-primary">
+
+        <!-- CHỦ ĐỀ -->
+        <div class="form-group">
+
+            <label for="category">
+                Chủ đề
+            </label>
+
+            <select
+                name="category"
+                id="category"
+                class="form-control"
+            >
+
+                <option value="">
+                    -- Chọn chủ đề --
+                </option>
+
+                <option value="cong-nghe">
+                    Công nghệ
+                </option>
+
+                <option value="the-thao">
+                    Thể thao
+                </option>
+
+                <option value="giai-tri">
+                    Giải trí
+                </option>
+
+                <option value="doi-song">
+                    Đời sống
+                </option>
+
+                <option value="kinh-te">
+                    Kinh tế
+                </option>
+
+                <option value="du-lich">
+                    Du lịch
+                </option>
+
+                <option value="suc-khoe">
+                    Sức khỏe
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="btn btn-primary"
+        >
             Tìm kiếm
         </button>
 
     </form>
 
-    {{#if keyword}}
+
+    <!-- KẾT QUẢ -->
+    {{#if blogs}}
 
         <h3 class="form-title search-title">
-            Kết quả cho: "{{keyword}}"
+            Kết quả tìm kiếm
         </h3>
 
-        {{#if blogs}}
 
-            {{#each blogs}}
+        {{#each blogs}}
 
-                <div class="blog-card">
+            <div class="blog-card">
 
-                    {{#if this.image}}
-                        <div class="blog-card-banner">
-                            <img
-                                src="{{this.image}}"
-                                alt="{{this.name}}"
-                                class="blog-banner-img"
-                            >
-                        </div>
-                    {{/if}}
+                {{#if image}}
 
-                    <div class="blog-content-wrapper">
+                    <div class="blog-card-banner">
 
-                        <h3 class="h3">
-                            {{this.name}}
-                        </h3>
-
-                        <p class="blog-text">
-                            {{this.description}}
-                        </p>
-
-                        <a
-                            href="/blogs/{{this.slug}}"
-                            class="btn btn-primary"
+                        <img
+                            src="{{image}}"
+                            alt="{{name}}"
+                            class="blog-banner-img"
                         >
-                            Xem bài viết
-                        </a>
 
                     </div>
 
+                {{/if}}
+
+
+                <div class="blog-content-wrapper">
+
+                    <h3 class="h3">
+                        {{name}}
+                    </h3>
+
+                    <p class="blog-text">
+                        {{description}}
+                    </p>
+
+                    <a
+                        href="/blogs/{{slug}}"
+                        class="btn btn-primary"
+                    >
+                        Xem bài viết
+                    </a>
+
                 </div>
 
-            {{/each}}
+            </div>
 
-        {{else}}
+        {{/each}}
+
+
+    {{else}}
+
+        {{#if keyword}}
 
             <p class="no-result">
                 Không tìm thấy bài viết nào.
             </p>
+
+        {{else}}
+
+            {{#if category}}
+
+                <p class="no-result">
+                    Không tìm thấy bài viết nào trong chủ đề này.
+                </p>
+
+            {{/if}}
 
         {{/if}}
 

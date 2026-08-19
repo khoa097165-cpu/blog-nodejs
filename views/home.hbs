@@ -1,3 +1,5 @@
+{{#unless isCategoryPage}}
+
 <section class="hero">
 
     <div class="container">
@@ -7,7 +9,6 @@
             <h1 class="h1">
                 Xin Chào <b>Đến Web Tin Tức.</b><br>
             </h1>
-
 
             <div class="btn-group">
 
@@ -46,65 +47,89 @@
 
 </section>
 
+{{/unless}}
+
 
 <section class="blog">
 
     <div class="container">
 
         <h2 class="h2">
-            Danh sách bài viết
+            {{#if selectedCategory}}
+                Bài viết: {{selectedCategory}}
+            {{else}}
+                Danh sách bài viết
+            {{/if}}
         </h2>
 
         <div class="blog-card-group">
 
-            {{#each blogs}}
+            {{#if blogs}}
 
-            <div class="blog-card">
+                {{#each blogs}}
 
-                <div class="blog-card-banner">
+                <div class="blog-card">
 
-                    <img
-                        src="{{this.image}}"
-                        alt="{{this.name}}"
-                        width="250"
-                        class="blog-banner-img"
-                    >
+                    <div class="blog-card-banner">
 
-                </div>
-
-                <div class="blog-content-wrapper">
-
-                    <button class="blog-topic text-tiny">
-                        Database
-                    </button>
-
-                    <h3>
-                        <a
-                            href="/blogs/{{this.slug}}"
-                            class="h3"
+                        <img
+                            src="{{this.image}}"
+                            alt="{{this.name}}"
+                            width="250"
+                            class="blog-banner-img"
                         >
-                            {{this.name}}
-                        </a>
-                    </h3>
 
-                    <p class="blog-text">
-                        {{this.description}}
-                    </p>
+                    </div>
+
+                    <div class="blog-content-wrapper">
+
+                        <button class="blog-topic text-tiny">
+                            {{this.category}}
+                        </button>
+
+                        <h3>
+                            <a
+                                href="/blogs/{{this.slug}}"
+                                class="h3"
+                            >
+                                {{this.name}}
+                            </a>
+                        </h3>
+
+                        <p class="blog-text">
+                            {{this.description}}
+                        </p>
+
+                    </div>
 
                 </div>
 
-            </div>
+                {{/each}}
 
-            {{/each}}
+            {{else}}
+
+                <p>Không có bài viết nào thuộc chủ đề này.</p>
+
+            {{/if}}
 
         </div>
+
+
+        {{#unless isCategoryPage}}
 
         <div class="pagination-wrapper">
 
-            <a href="/?page=1" class="pagination-btn">1</a>
-            <a href="/?page=2" class="pagination-btn">2</a>
+            <a href="/?page=1" class="pagination-btn">
+                1
+            </a>
+
+            <a href="/?page=2" class="pagination-btn">
+                2
+            </a>
 
         </div>
+
+        {{/unless}}
 
     </div>
 

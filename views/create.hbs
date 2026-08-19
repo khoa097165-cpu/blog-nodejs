@@ -1,20 +1,33 @@
 <div class="container form-container">
-    <h1 class="form-title">Đăng bài Blog mới</h1>
+
+    <h1 class="form-title">
+        Đăng bài Blog mới
+    </h1>
 
     <form method="POST" action="/blogs/store">
 
+        <!-- TIÊU ĐỀ -->
         <div class="form-group">
-            <label for="name">Tiêu đề bài viết</label>
+            <label for="name">
+                Tiêu đề bài viết
+            </label>
+
             <input
                 type="text"
                 id="name"
                 name="name"
                 class="form-control"
+                required
             >
         </div>
 
+
+        <!-- MÔ TẢ -->
         <div class="form-group">
-            <label for="description">Mô tả ngắn</label>
+            <label for="description">
+                Mô tả ngắn
+            </label>
+
             <input
                 type="text"
                 id="description"
@@ -23,8 +36,13 @@
             >
         </div>
 
+
+        <!-- HÌNH ẢNH -->
         <div class="form-group">
-            <label for="image">Link hình ảnh</label>
+            <label for="image">
+                Link hình ảnh
+            </label>
+
             <input
                 type="text"
                 id="image"
@@ -33,8 +51,60 @@
             >
         </div>
 
+
+        <!-- CHỦ ĐỀ -->
         <div class="form-group">
-            <label for="slug">Đường dẫn tĩnh (Slug)</label>
+            <label for="category">
+                Chủ đề
+            </label>
+
+            <select
+                id="category"
+                name="category"
+                class="form-control"
+                required
+            >
+                <option value="">
+                    -- Chọn chủ đề --
+                </option>
+
+                <option value="cong-nghe">
+                    Công nghệ
+                </option>
+
+                <option value="the-thao">
+                    Thể thao
+                </option>
+
+                <option value="giai-tri">
+                    Giải trí
+                </option>
+
+                <option value="doi-song">
+                    Đời sống
+                </option>
+
+                <option value="kinh-te">
+                    Kinh tế
+                </option>
+
+                <option value="du-lich">
+                    Du lịch
+                </option>
+
+                <option value="suc-khoe">
+                    Sức khỏe
+                </option>
+            </select>
+        </div>
+
+
+        <!-- SLUG -->
+        <div class="form-group">
+            <label for="slug">
+                Đường dẫn tĩnh (Slug)
+            </label>
+
             <input
                 type="text"
                 id="slug"
@@ -44,9 +114,15 @@
             >
         </div>
 
-        <button type="submit" class="btn btn-primary">
+
+        <!-- NÚT ĐĂNG -->
+        <button
+            type="submit"
+            class="btn btn-primary"
+        >
             Đăng bài
         </button>
 
     </form>
+
 </div>
