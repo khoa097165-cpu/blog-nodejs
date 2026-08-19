@@ -2107,4 +2107,67 @@ footer li {
     background: var(--action-primary);
     color: white;
 }
+/* ==============================
+   CHI TIẾT BÀI VIẾT
+============================== */
+
+.blog-detail .container {
+    max-width: 1150px;
+}
+
+.blog-detail-image {
+    width: 100%;
+    margin: 30px 0;
+}
+
+.blog-detail-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.blog-detail-text {
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    color: var(--foreground-secondary);
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+
+    /* Không giới hạn nội dung */
+    overflow: visible !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+    -webkit-box-orient: unset !important;
+}
+.pagination-next {
+    width: 35px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+
+    color: var(--foreground-primary);
+    text-decoration: none;
+
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1;
+
+    opacity: 1;
+    transition: 0.2s ease;
+}
+
+.pagination-next:hover {
+    color: var(--accent);
+    background: transparent;
+    transform: scale(1.15);
+}
 }

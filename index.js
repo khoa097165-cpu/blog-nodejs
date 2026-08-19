@@ -53,6 +53,51 @@ app.engine(
     'hbs',
     engine({
         extname: '.hbs',
+
+        helpers: {
+
+            // So sánh bằng
+            eq: (a, b) => a == b,
+
+            // Lớn hơn
+            gt: (a, b) => a > b,
+
+            // Nhỏ hơn
+            lt: (a, b) => a < b,
+
+            // Cộng
+            add: (a, b) => Number(a) + Number(b),
+
+            // Trừ
+            subtract: (a, b) => Number(a) - Number(b),
+
+            // Tạo danh sách trang
+            paginationPages: (currentPage, totalPages) => {
+
+                const pages = [];
+
+                let start = Math.max(1, currentPage - 1);
+                let end = Math.min(totalPages, currentPage + 1);
+
+                // Khi đang ở trang 1 hoặc 2
+                if (currentPage <= 2) {
+                    start = 1;
+                    end = Math.min(totalPages, 3);
+                }
+
+                // Khi ở gần trang cuối
+                if (currentPage >= totalPages - 1) {
+                    start = Math.max(1, totalPages - 2);
+                    end = totalPages;
+                }
+
+                for (let i = start; i <= end; i++) {
+                    pages.push(i);
+                }
+
+                return pages;
+            }
+        }
     })
 );
 

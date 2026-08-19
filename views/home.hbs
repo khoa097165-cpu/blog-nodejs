@@ -117,17 +117,105 @@
 
         {{#unless isCategoryPage}}
 
+        <!-- PHÂN TRANG TỰ ĐỘNG -->
+
+        {{#if totalPages}}
+
         <div class="pagination-wrapper">
 
-            <a href="/?page=1" class="pagination-btn">
-                1
-            </a>
+            <!-- NÚT TRƯỚC -->
+            {{#if (gt currentPage 1)}}
 
-            <a href="/?page=2" class="pagination-btn">
-                2
-            </a>
+               <a
+    href="/?page={{subtract currentPage 1}}"
+    class="pagination-next"
+    aria-label="Trang trước"
+>
+    ‹
+</a>
+
+            {{/if}}
+
+
+            <!-- TRANG ĐẦU -->
+            {{#if (gt currentPage 3)}}
+
+                <a
+                    href="/?page=1"
+                    class="pagination-btn"
+                >
+                    1
+                </a>
+
+                <span class="pagination-dots">
+                    ...
+                </span>
+
+            {{/if}}
+
+
+            <!-- CÁC TRANG GẦN TRANG HIỆN TẠI -->
+
+            {{#each (paginationPages currentPage totalPages)}}
+
+                {{#if (eq this ../currentPage)}}
+
+                    <a
+                        href="/?page={{this}}"
+                        class="pagination-btn active"
+                    >
+                        {{this}}
+                    </a>
+
+                {{else}}
+
+                    <a
+                        href="/?page={{this}}"
+                        class="pagination-btn"
+                    >
+                        {{this}}
+                    </a>
+
+                {{/if}}
+
+            {{/each}}
+
+
+            <!-- TRANG CUỐI -->
+
+            {{#if (lt currentPage (subtract totalPages 2))}}
+
+                <span class="pagination-dots">
+                    ...
+                </span>
+
+                <a
+                    href="/?page={{totalPages}}"
+                    class="pagination-btn"
+                >
+                    {{totalPages}}
+                </a>
+
+            {{/if}}
+
+
+            <!-- NÚT SAU -->
+
+            {{#if (lt currentPage totalPages)}}
+
+<a
+    href="/?page={{add currentPage 1}}"
+    class="pagination-next"
+    aria-label="Trang sau"
+>
+    ›
+</a>
+
+            {{/if}}
 
         </div>
+
+        {{/if}}
 
         {{/unless}}
 

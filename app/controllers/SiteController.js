@@ -4,25 +4,32 @@ const Blog = require('../models/Blogs');
 class SiteController {
 
     // [GET] /
-    index(req, res, next) {
-        const page = Number(req.query.page) || 1;
-        const perPage = 4;
+index(req, res, next) {
+    const page = Math.max(Number(req.query.page) || 1, 1);
+    const perPage = 4;
 
-        Blog.find({})
-            .sort({ createdAt: -1 })
-            .lean()
-            .then((allBlogs) => {
+    Blog.find({})
+        .sort({ createdAt: -1 })
+        .lean()
+        .then((allBlogs) => {
 
-                const start = (page - 1) * perPage;
-                const blogs = allBlogs.slice(start, start + perPage);
+            const totalBlogs = allBlogs.length;
+            const totalPages = Math.ceil(totalBlogs / perPage);
 
-                res.render('home', {
-                    blogs,
-                    showTopicBar: true
-                });
-            })
-            .catch(next);
-    }
+            // Nếu nhập page vượt quá số trang
+            const currentPage = Math.min(page, Math.max(totalPages, 1));
+
+            const start = (currentPage - 1) * perPage;
+            const blogs = allBlogs.slice(start, start + perPage);
+
+            res.render('home', {
+                blogs,
+                currentPage,
+                totalPages
+            });
+        })
+        .catch(next);
+}
 
     // [GET] /category/:category
     category(req, res, next) {
