@@ -5,19 +5,23 @@
             {{blog.name}}
         </h1>
 
-        {{#if blog.image}}
-            <div class="blog-detail-image">
-                <img
-                    src="{{blog.image}}"
-                    alt="{{blog.name}}"
-                >
-            </div>
-        {{/if}}
+        <div class="blog-detail-layout">
 
-        <div class="blog-content">
-            <p class="blog-text blog-detail-text">
-                {{blog.description}}
-            </p>
+            {{#if blog.image}}
+                <div class="blog-detail-image">
+                    <img
+                        src="{{blog.image}}"
+                        alt="{{blog.name}}"
+                    >
+                </div>
+            {{/if}}
+
+            <div class="blog-content">
+                <p class="blog-text blog-detail-text">
+                    {{blog.description}}
+                </p>
+            </div>
+
         </div>
 
         <a href="/" class="btn btn-secondary" style="margin-bottom: 30px;">

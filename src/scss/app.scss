@@ -703,10 +703,11 @@ footer .wrapper {
     }
 
     .blog-banner-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+    width: 450px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
 
 }
 
@@ -2169,5 +2170,34 @@ footer li {
     color: var(--accent);
     background: transparent;
     transform: scale(1.15);
+}
+.blog-detail-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+    margin-top: 25px;
+}
+
+.blog-detail-image {
+    width: 45%;
+    flex-shrink: 0;
+}
+
+.blog-detail-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.blog-content {
+    flex: 1;
+}
+
+.blog-detail-text {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.8;
 }
 }
