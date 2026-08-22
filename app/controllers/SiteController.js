@@ -25,7 +25,9 @@ index(req, res, next) {
             res.render('home', {
                 blogs,
                 currentPage,
-                totalPages
+                totalPages,
+                showTopicBar: true
+
             });
         })
         .catch(next);

@@ -16,7 +16,7 @@ const Blog = new Schema(
 
         description: {
             type: String,
-            maxlength: 600,
+            maxlength: 10000,
         },
 
         image: {
@@ -32,9 +32,10 @@ const Blog = new Schema(
                 'the-thao',
                 'giai-tri',
                 'doi-song',
-                'kinh-te',
+                'bat-dong-san',
                 'du-lich',
-                'suc-khoe'
+                'suc-khoe',
+                'xe'
             ],
             default: 'cong-nghe'
         },
