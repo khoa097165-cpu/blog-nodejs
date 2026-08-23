@@ -3917,30 +3917,83 @@ body.dark-theme .form-container .card:hover {
         color: #f1f5f9 !important;
     }
 }
-body.dark .featured-container {
-    background: #202b3d !important;
-    border: 1px solid #334155 !important;
-}
 
-body.dark .featured-label {
-    background: #293b5c !important;
-    color: #7da2ff !important;
 }
+/* =====================================================
+   LIÊN HỆ - MOBILE ONLY
+   DESKTOP GIỮ NGUYÊN
+===================================================== */
 
-body.dark .featured-title,
-body.dark .featured-content h1,
-body.dark .featured-content h2 {
-    color: #f1f5f9 !important;
-}
+@media (max-width: 767px) {
 
-body.dark .featured-description,
-body.dark .featured-content > p {
-    color: #b8c4d6 !important;
-}
+    .form-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 25px 16px 40px !important;
+    }
 
-body.dark .featured-btn-secondary,
-body.dark .featured-btn-outline {
-    color: #dbe5f5 !important;
-    border-color: #668cff !important;
-}
+    .form-container .h2 {
+        font-size: 24px !important;
+        margin: 0 0 20px !important;
+        color: var(--foreground-primary) !important;
+    }
+
+    .form-container .row {
+        display: block !important;
+        margin: 0 !important;
+    }
+
+    .form-container .col-md-6 {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin-bottom: 18px !important;
+    }
+
+    .form-container .card {
+        width: 100% !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+        background: var(--background-primary) !important;
+        border: 1px solid var(--action-primary) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+        transform: none !important;
+    }
+
+    .form-container .card-body {
+        padding: 18px !important;
+        background: var(--background-primary) !important;
+    }
+
+    .form-container .card-title {
+        font-size: 21px !important;
+        line-height: 1.35 !important;
+        margin: 0 0 14px !important;
+        color: var(--foreground-primary) !important;
+    }
+
+    .form-container .card-text {
+        font-size: 15px !important;
+        line-height: 1.55 !important;
+        margin: 0 0 12px !important;
+        color: var(--foreground-secondary) !important;
+    }
+
+    .form-container .card-text strong {
+        color: var(--foreground-primary) !important;
+    }
+
+    .form-container .card-text a {
+        color: var(--accent) !important;
+        text-decoration: none !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+    }
+
+    .form-container .card:hover {
+        transform: none !important;
+    }
 }
