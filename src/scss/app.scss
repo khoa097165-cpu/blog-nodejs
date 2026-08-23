@@ -3661,3 +3661,260 @@ body.dark-theme .form-container .card:hover {
     }
 }
 }
+
+
+/* =========================================
+   ẨN THANH CHỦ ĐỀ TRÊN MOBILE
+   Desktop vẫn giữ nguyên
+========================================= */
+
+@media (max-width: 768px) {
+    .topic-bar {
+        display: none !important;
+    }
+    .logo {
+    display: block !important;
+    width: 150px;
+    height: auto;
+}
+
+/* Không cho logo cũ hiện */
+.logo-light,
+.logo-dark {
+    display: none !important;
+}
+/* =========================
+   CHỈNH CHỮ DARK MODE
+========================= */
+
+.dark-theme .hero .h1 {
+    color: #F1F5F9 !important;
+}
+
+.dark-theme .hero .h3 {
+    color: #D6E0EA !important;
+}
+
+.dark-theme .blog .h2 {
+    color: #F1F5F9 !important;
+}
+
+.dark-theme .blog-card .h3 {
+    color: #F1F5F9 !important;
+}
+
+.dark-theme .blog-text {
+    color: #D6E0EA !important;
+}
+/* =========================
+   CHỈNH NÚT TRÊN MOBILE
+   DESKTOP GIỮ NGUYÊN
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero .btn-group {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .hero .btn-group .btn {
+        width: 170px;
+        min-width: 0;
+        height: 52px;
+
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 28px !important;
+
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    /* Liên hệ */
+    .hero .btn-group .btn-primary {
+        background: var(--accent);
+        color: #fff;
+        border: 2px solid var(--accent);
+    }
+
+    /* Về tôi */
+    .hero .btn-group .btn-secondary {
+        background: var(--action-secondary);
+        color: var(--foreground-secondary);
+        border: 2px solid var(--foreground-tertiary);
+    }
+
+    /* Dark mode */
+    .dark-theme .hero .btn-group .btn-primary {
+        color: #fff;
+    }
+
+    .dark-theme .hero .btn-group .btn-secondary {
+        color: #F1F5F9;
+        background: #2D3748;
+        border-color: #A0AEC0;
+    }
+}
+/* =========================
+   PHÂN TRANG MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .pagination-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        margin: 25px auto 30px;
+        padding: 0;
+    }
+
+    .pagination-btn,
+    .pagination-next,
+    .pagination-dots {
+        width: 34px;
+        height: 34px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+        padding: 0;
+
+        font-size: 14px;
+        line-height: 1;
+        text-decoration: none;
+
+        border-radius: 6px;
+    }
+
+    .pagination-btn {
+        color: #2563eb;
+    }
+
+    .pagination-btn.active {
+        background: #627eea;
+        color: #fff;
+    }
+
+    .pagination-next {
+        color: #2563eb;
+    }
+
+    .pagination-dots {
+        color: #555;
+    }
+
+    /* DARK MODE */
+    .dark-theme .pagination-btn,
+    .dark-theme .pagination-next {
+        color: #60a5fa;
+    }
+
+    .dark-theme .pagination-btn.active {
+        background: #627eea;
+        color: #fff;
+    }
+
+    .dark-theme .pagination-dots {
+        color: #cbd5e1;
+    }
+}
+/* =========================
+   FOOTER MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .site-footer {
+        background: #eef3ff !important;
+        color: #26344d;
+        padding: 45px 20px 35px;
+    }
+
+    .site-footer .footer-logo img {
+        width: 130px;
+        height: auto;
+    }
+
+    .site-footer h3,
+    .site-footer h4 {
+        color: #26344d !important;
+    }
+
+    .site-footer p {
+        color: #4b5563;
+    }
+
+    .site-footer a {
+        color: #2563eb !important;
+    }
+
+    .site-footer a:hover {
+        color: #1d4ed8 !important;
+    }
+
+    /* Mạng xã hội */
+    .site-footer ion-icon {
+        color: #2563eb;
+    }
+
+    /* DARK MODE */
+    .dark-theme .site-footer {
+        background: #1e293b !important;
+        color: #f1f5f9;
+    }
+
+    .dark-theme .site-footer h3,
+    .dark-theme .site-footer h4,
+    .dark-theme .site-footer p {
+        color: #f1f5f9 !important;
+    }
+
+    .dark-theme .site-footer a {
+        color: #60a5fa !important;
+    }
+
+    .dark-theme .site-footer ion-icon {
+        color: #60a5fa;
+    }
+}
+@media (max-width: 768px) {
+
+    .site-footer a,
+    .site-footer a:visited,
+    .site-footer a:hover,
+    .site-footer a:active {
+        color: #26344d !important;
+        text-decoration: none;
+    }
+
+    .site-footer ion-icon {
+        color: #26344d !important;
+    }
+
+    /* Dark mode */
+    .dark-theme .site-footer a,
+    .dark-theme .site-footer a:visited,
+    .dark-theme .site-footer a:hover,
+    .dark-theme .site-footer a:active {
+        color: #f1f5f9 !important;
+    }
+
+    .dark-theme .site-footer ion-icon {
+        color: #f1f5f9 !important;
+    }
+}
+}
