@@ -18,10 +18,15 @@
 
                 <td>{{this.name}}</td>
 
-                <td>{{this.createdAt}}</td>
+                <td>
+                    <span class="vietnam-date" data-date="{{this.createdAt}}">
+                        {{this.createdAt}}
+                    </span>
+                </td>
 
                 <td>
                     <div class="actions">
+
                         <a
                             href="/blogs/{{this._id}}/edit"
                             class="btn btn-primary"
@@ -40,6 +45,7 @@
                                 Xóa
                             </button>
                         </form>
+
                     </div>
                 </td>
             </tr>
@@ -47,3 +53,25 @@
         </tbody>
     </table>
 </div>
+
+<script>
+document.querySelectorAll(".vietnam-date").forEach(function (element) {
+
+    const date = new Date(element.dataset.date);
+
+    if (!isNaN(date.getTime())) {
+
+        element.textContent = date.toLocaleString("vi-VN", {
+            timeZone: "Asia/Ho_Chi_Minh",
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false
+        });
+
+    }
+
+});
+</script>

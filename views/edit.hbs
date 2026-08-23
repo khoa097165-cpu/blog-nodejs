@@ -1,18 +1,104 @@
-<div class="mt-4">
-    <h3>Cập nhật bài viết</h3>
-    <form method="POST" action="/blogs/{{blog._id}}?_method=PUT">
-        <div class="form-group">
-            <label for="name">Tiêu đề bài viết</label>
-            <input type="text" class="form-control" value="{{blog.name}}" id="name" name="name" required>
+<div class="edit-page">
+    <div class="edit-container">
+
+        <!-- Tiêu đề -->
+        <div class="edit-header">
+            <span class="edit-icon">✏️</span>
+            <div>
+                <h1>Cập nhật bài viết</h1>
+                <p>Chỉnh sửa thông tin bài viết của bạn</p>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="description">Mô tả ngắn</label>
-            <textarea class="form-control" id="description" name="description">{{blog.description}}</textarea>
-        </div>
-        <div class="form-group">
-            <label for="image">Link hình ảnh</label>
-            <input type="text" class="form-control" value="{{blog.image}}" id="image" name="image">
-        </div>
-        <button type="submit" class="btn btn-primary mt-2">Lưu lại</button>
-    </form>
+
+        <form method="POST" action="/blogs/{{blog._id}}?_method=PUT">
+
+            <!-- Tiêu đề bài viết -->
+            <div class="edit-form-group">
+                <label for="name">Tiêu đề bài viết</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="edit-input"
+                    value="{{blog.name}}"
+                    placeholder="Nhập tiêu đề bài viết..."
+                    required
+                >
+            </div>
+
+            <!-- Chủ đề -->
+            <div class="edit-form-group">
+                <label for="category">Chủ đề</label>
+
+                <select
+                    id="category"
+                    name="category"
+                    class="edit-input"
+                    required
+                >
+                    <option value="">-- Chọn chủ đề --</option>
+
+                    <option value="cong-nghe"> Công nghệ</option>
+                    <option value="the-thao"> Thể thao</option>
+                    <option value="giai-tri"> Giải trí</option>
+                    <option value="doi-song"> Đời sống</option>
+                    <option value="bat-dong-san">Bất động sản</option>
+                    <option value="du-lich"> Du lịch</option>
+                    <option value="suc-khoe"> Sức khỏe</option>
+                    <option value="xe"> Xe</option>
+                </select>
+            </div>
+
+            <!-- Mô tả -->
+            <div class="edit-form-group">
+                <label for="description">Mô tả ngắn</label>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    class="edit-textarea"
+                    placeholder="Nhập mô tả ngắn cho bài viết..."
+                >{{blog.description}}</textarea>
+            </div>
+
+            <!-- Hình ảnh -->
+            <div class="edit-form-group">
+                <label for="image"> Link hình ảnh</label>
+
+                <input
+                    type="text"
+                    id="image"
+                    name="image"
+                    class="edit-input"
+                    value="{{blog.image}}"
+                    placeholder="https://..."
+                >
+            </div>
+
+            <!-- Nút -->
+            <div class="edit-buttons">
+
+                <a href="/me/stored/blogs" class="edit-back-btn">
+                    ← Quay lại
+                </a>
+
+                <button type="submit" class="edit-save-btn">
+                     Lưu lại
+                </button>
+
+            </div>
+
+        </form>
+    </div>
 </div>
+
+<script>
+    // Chọn đúng chủ đề hiện tại của bài viết
+    const currentCategory = "{{blog.category}}";
+    const categorySelect = document.getElementById("category");
+
+    if (currentCategory) {
+        categorySelect.value = currentCategory;
+    }
+</script>
