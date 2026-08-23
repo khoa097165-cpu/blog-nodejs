@@ -2445,5 +2445,85 @@ footer .wrapper {
     font-size: 14px;
   }
 }
+@media (min-width: 1024px) {
+  /* =========================================
+     TRANG LIÊN HỆ
+  ========================================= */
+  .form-container {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  .form-container .h2 {
+    margin-bottom: 25px;
+  }
+  /* =========================
+     LIGHT THEME
+  ========================= */
+  body.light-theme .form-container {
+    color: #26344d;
+  }
+  body.light-theme .form-container .card {
+    background: #ffffff;
+    border: 1px solid #d8dee9;
+  }
+  body.light-theme .form-container .card-title {
+    color: #26344d;
+  }
+  body.light-theme .form-container .card-text {
+    color: #475569;
+  }
+  body.light-theme .form-container .card-text strong {
+    color: #26344d;
+  }
+  body.light-theme .form-container .card-text a {
+    color: #667eea;
+    text-decoration: none;
+  }
+  body.light-theme .form-container .card-text a:hover {
+    color: #4f5fd1;
+  }
+  /* =========================
+     DARK THEME
+  ========================= */
+  body.dark-theme .form-container {
+    color: #f1f5f9;
+  }
+  body.dark-theme .form-container .h2 {
+    color: #f8fafc;
+  }
+  body.dark-theme .form-container .card {
+    background: #1e293b;
+    border: 1px solid #475569;
+    color: #e2e8f0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25) !important;
+  }
+  body.dark-theme .form-container .card-title {
+    color: #f8fafc;
+  }
+  body.dark-theme .form-container .card-text {
+    color: #cbd5e1;
+  }
+  body.dark-theme .form-container .card-text strong {
+    color: #f1f5f9;
+  }
+  body.dark-theme .form-container .card-text a {
+    color: #a5b4fc;
+    text-decoration: none;
+  }
+  body.dark-theme .form-container .card-text a:hover {
+    color: #818cf8;
+  }
+  /* Hover card */
+  .form-container .card {
+    transition: 0.25s ease;
+  }
+  .form-container .card:hover {
+    transform: translateY(-4px);
+  }
+  body.dark-theme .form-container .card:hover {
+    border-color: #667eea;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3) !important;
+  }
+}
 
 /*# sourceMappingURL=app.css.map */
