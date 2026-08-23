@@ -3655,4 +3655,9 @@ body.dark-theme .form-container .card:hover {
         justify-content: center;
         font-size: 14px;
     }
+    @media (max-width: 767px) {
+    .topic-bar {
+        display: none !important;
+    }
+}
 }
