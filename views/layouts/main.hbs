@@ -146,6 +146,40 @@
     </script>
 
 
+    <!-- =========================
+         MOBILE MENU
+    ========================== -->
+    <script>
+        const mobileMenu = document.querySelector(".mobile-nav");
+        const menuBtn = document.querySelector(".nav-menu-btn");
+        const closeMenuBtn = document.querySelector(".nav-close-btn");
+
+        function openMobileMenu() {
+            if (!mobileMenu) return;
+            mobileMenu.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeMobileMenu() {
+            if (!mobileMenu) return;
+            mobileMenu.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        if (menuBtn) menuBtn.addEventListener("click", openMobileMenu);
+        if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMobileMenu);
+
+        if (mobileMenu) {
+            mobileMenu.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", closeMobileMenu);
+            });
+        }
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") closeMobileMenu();
+        });
+    </script>
+
     <script
         type="module"
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
