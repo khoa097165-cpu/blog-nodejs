@@ -3453,3 +3453,206 @@ body.dark-theme .form-container .card:hover {
         margin-top: 14px;
     }
 }
+
+/* =====================================================
+   MOBILE FINAL - GỌN, CÂN ĐỐI, KHÔNG TRÀN NGANG
+   ===================================================== */
+@media (max-width: 767px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    header .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    header .navbar {
+        min-height: 70px;
+        padding: 10px 0;
+        align-items: center;
+    }
+
+    header .navbar > a {
+        flex: 1;
+    }
+
+    header .logo-light,
+    header .logo-dark {
+        width: 145px !important;
+        max-width: 145px !important;
+        display: block;
+    }
+
+    header .btn-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .theme-btn-mobile,
+    .nav-menu-btn {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        border-radius: 50% !important;
+        font-size: 21px !important;
+        display: grid !important;
+        place-items: center;
+    }
+
+    /* Chủ đề: đọc rõ, kéo ngang */
+    .topic-bar {
+        height: 46px;
+        border-top: 1px solid rgba(0,0,0,.05);
+        border-bottom: 1px solid rgba(0,0,0,.08);
+    }
+
+    .topic-container {
+        height: 46px;
+        min-height: 46px;
+        padding: 0 14px;
+        gap: 18px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .topic-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .topic-item {
+        height: 46px;
+        line-height: 46px;
+        flex: 0 0 auto;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 30px 0 36px;
+    }
+
+    .hero .container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .hero .left {
+        width: 100%;
+    }
+
+    .hero .h1 {
+        font-size: clamp(25px, 7vw, 31px);
+        line-height: 1.35;
+        margin: 0 auto 22px;
+        max-width: 340px;
+    }
+
+    .hero .btn-group {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 8px;
+        margin-top: 12px;
+    }
+
+    .hero .btn-group .btn {
+        flex: 1 1 0;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        height: 48px;
+        padding: 0 10px;
+        border-radius: 25px !important;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    /* Danh sách bài viết */
+    .blog {
+        padding: 0 0 20px;
+    }
+
+    .blog .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .blog .h2 {
+        font-size: 22px;
+        line-height: 1.3;
+        margin: 18px 0 16px;
+    }
+
+    .blog-card-group {
+        margin-bottom: 20px;
+    }
+
+    .blog-card {
+        width: 100%;
+        margin-bottom: 16px;
+        padding: 0;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .blog-card-banner,
+    .blog-card-banner .blog-banner-img,
+    .blog-banner-img {
+        width: 100% !important;
+        height: 165px !important;
+        min-height: 165px;
+        object-fit: cover !important;
+    }
+
+    .blog-card-banner {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .blog-content-wrapper {
+        padding: 12px 12px 14px;
+    }
+
+    .blog-topic {
+        font-size: 11px;
+        padding: 4px 8px;
+        margin-bottom: 7px;
+    }
+
+    .blog-card .h3 {
+        font-size: 17px;
+        line-height: 1.4;
+        margin-bottom: 7px;
+    }
+
+    .blog-text {
+        font-size: 13px;
+        line-height: 1.5;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+
+    /* Phân trang */
+    .pagination-wrapper {
+        justify-content: center;
+        gap: 5px !important;
+        margin: 22px auto 30px !important;
+        flex-wrap: wrap;
+    }
+
+    .pagination-wrapper .pagination-btn,
+    .pagination-wrapper .pagination-next {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        padding: 0 !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+    }
+}

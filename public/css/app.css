@@ -2786,5 +2786,548 @@ footer .wrapper {
     margin-top: 14px;
   }
 }
+/* =====================================================
+   MOBILE FINAL - GỌN, CÂN ĐỐI, KHÔNG TRÀN NGANG
+   ===================================================== */
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+  header .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  header .navbar {
+    min-height: 70px;
+    padding: 10px 0;
+    align-items: center;
+  }
+  header .navbar > a {
+    flex: 1;
+  }
+  header .logo-light,
+  header .logo-dark {
+    width: 145px !important;
+    max-width: 145px !important;
+    display: block;
+  }
+  header .btn-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .theme-btn-mobile,
+  .nav-menu-btn {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    border-radius: 50% !important;
+    font-size: 21px !important;
+    display: grid !important;
+    place-items: center;
+  }
+  /* Chủ đề: đọc rõ, kéo ngang */
+  .topic-bar {
+    height: 46px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .topic-container {
+    height: 46px;
+    min-height: 46px;
+    padding: 0 14px;
+    gap: 18px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .topic-container::-webkit-scrollbar {
+    display: none;
+  }
+  .topic-item {
+    height: 46px;
+    line-height: 46px;
+    flex: 0 0 auto;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  /* Hero */
+  .hero {
+    padding: 30px 0 36px;
+  }
+  .hero .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .hero .left {
+    width: 100%;
+  }
+  .hero .h1 {
+    font-size: clamp(25px, 7vw, 31px);
+    line-height: 1.35;
+    margin: 0 auto 22px;
+    max-width: 340px;
+  }
+  .hero .btn-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .hero .btn-group .btn {
+    flex: 1 1 0;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 48px;
+    padding: 0 10px;
+    border-radius: 25px !important;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  /* Danh sách bài viết */
+  .blog {
+    padding: 0 0 20px;
+  }
+  .blog .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .blog .h2 {
+    font-size: 22px;
+    line-height: 1.3;
+    margin: 18px 0 16px;
+  }
+  .blog-card-group {
+    margin-bottom: 20px;
+  }
+  .blog-card {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .blog-card-banner,
+  .blog-card-banner .blog-banner-img,
+  .blog-banner-img {
+    width: 100% !important;
+    height: 165px !important;
+    min-height: 165px;
+    object-fit: cover !important;
+  }
+  .blog-card-banner {
+    border-radius: 10px 10px 0 0;
+  }
+  .blog-content-wrapper {
+    padding: 12px 12px 14px;
+  }
+  .blog-topic {
+    font-size: 11px;
+    padding: 4px 8px;
+    margin-bottom: 7px;
+  }
+  .blog-card .h3 {
+    font-size: 17px;
+    line-height: 1.4;
+    margin-bottom: 7px;
+  }
+  .blog-text {
+    font-size: 13px;
+    line-height: 1.5;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+  /* Phân trang */
+  .pagination-wrapper {
+    justify-content: center;
+    gap: 5px !important;
+    margin: 22px auto 30px !important;
+    flex-wrap: wrap;
+  }
+  .pagination-wrapper .pagination-btn,
+  .pagination-wrapper .pagination-next {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    padding: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+}
 
-/*# sourceMappingURL=app.css.map */
+
+/* =====================================================
+   MOBILE HOME - CLEAN NEWS LAYOUT
+   ===================================================== */
+@media (max-width: 767px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    background: var(--background-primary);
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* HEADER - chỉ 1 logo */
+  header {
+    background: var(--background-primary);
+    border-bottom: 1px solid #edf0f5;
+  }
+
+  header .navbar {
+    min-height: 82px;
+    padding: 18px 0;
+    gap: 12px;
+  }
+
+  header .navbar > a {
+    display: block;
+    line-height: 0;
+    flex: 0 0 auto;
+  }
+
+  header .logo-light,
+  header .logo-dark {
+    display: block !important;
+    width: 150px !important;
+    max-width: 150px !important;
+    height: auto !important;
+  }
+
+  /* chỉ hiện logo-light, không tạo logo thứ 2 */
+  header .logo-dark {
+    display: none !important;
+  }
+
+  header .btn-group {
+    gap: 10px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .theme-btn-mobile,
+  .nav-menu-btn {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    border-radius: 50%;
+    font-size: 23px !important;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 48px 0 58px !important;
+    background: var(--background-primary);
+  }
+
+  .hero .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero .left {
+    width: 100%;
+  }
+
+  .hero .h1 {
+    font-size: 30px !important;
+    line-height: 1.35 !important;
+    font-weight: 800;
+    margin: 0 auto 28px !important;
+    max-width: 390px;
+    text-align: center;
+  }
+
+  .hero .btn-group {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px !important;
+    margin: 0 !important;
+  }
+
+  .hero .btn-group .btn {
+    flex: 1 1 0;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 58px !important;
+    padding: 0 10px;
+    border-radius: 30px !important;
+    font-size: 16px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* DANH SÁCH */
+  .blog {
+    padding: 0 0 50px !important;
+    background: var(--background-primary);
+  }
+
+  .blog .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .blog .h2 {
+    font-size: 27px !important;
+    line-height: 1.3 !important;
+    margin: 0 0 28px !important;
+    text-align: center;
+  }
+
+  .blog-card-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+
+  .blog-card {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+    border-radius: 16px !important;
+    background: var(--background-primary);
+    box-shadow: 0 8px 24px rgba(27, 39, 65, 0.08);
+  }
+
+  .blog-card-banner {
+    display: block !important;
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: 2.12 / 1;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .blog-card-banner .blog-banner-img,
+  .blog-banner-img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+  }
+
+  .blog-content-wrapper {
+    padding: 15px 14px 18px !important;
+  }
+
+  .blog-topic {
+    font-size: 12px !important;
+    padding: 6px 10px !important;
+    margin-bottom: 10px !important;
+    border-radius: 6px !important;
+  }
+
+  .blog-card .h3 {
+    display: block;
+    font-size: 19px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 9px !important;
+  }
+
+  .blog-text {
+    display: -webkit-box !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* =====================================================
+   MOBILE FOOTER - CLEAN & COMPACT
+   ===================================================== */
+@media (max-width: 767px) {
+  .site-footer {
+    width: 100% !important;
+    margin-top: 35px !important;
+    padding: 42px 20px 38px !important;
+    background: #2d394d !important;
+    color: #fff !important;
+    text-align: center !important;
+  }
+
+  .site-footer .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .site-footer .footer-main {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 28px !important;
+    width: 100% !important;
+  }
+
+  .site-footer .footer-brand {
+    min-height: 0 !important;
+    width: 100% !important;
+    border: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .site-footer .footer-logo {
+    display: block !important;
+  }
+
+  .site-footer .footer-logo img {
+    display: block !important;
+    width: 125px !important;
+    max-width: 125px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  .site-footer .footer-support,
+  .site-footer .footer-links {
+    width: 100% !important;
+    max-width: 320px !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .site-footer h4 {
+    margin: 0 0 14px !important;
+    color: #fff !important;
+    font-size: 19px !important;
+    line-height: 1.35 !important;
+    font-weight: 700 !important;
+  }
+
+  .site-footer .footer-phone {
+    display: block !important;
+    margin: 0 0 9px !important;
+    color: #1680ff !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer .footer-support p {
+    margin: 0 0 12px !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+
+  .site-footer .footer-support p a {
+    color: #1680ff !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer .footer-social {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-top: 12px !important;
+  }
+
+  .site-footer .footer-social a {
+    color: #1680ff !important;
+    font-size: 17px !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer .footer-links {
+    display: block !important;
+  }
+
+  .site-footer .footer-links h4 {
+    margin-bottom: 12px !important;
+  }
+
+  .site-footer .footer-links a {
+    display: inline-block !important;
+    margin: 0 3px !important;
+    color: #1680ff !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer .footer-links a:hover,
+  .site-footer .footer-phone:hover,
+  .site-footer .footer-social a:hover {
+    color: #58a5ff !important;
+  }
+
+  /* Pagination mobile: gọn, nằm giữa */
+  .pagination-wrapper {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin: 28px auto 18px !important;
+    padding: 0 10px !important;
+  }
+
+  .pagination-wrapper .pagination-btn,
+  .pagination-wrapper .pagination-next {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+  }
+
+  /* Dấu ... phải nằm chính giữa hàng pagination */
+  .pagination-wrapper .pagination-dots {
+    width: 18px !important;
+    height: 34px !important;
+    min-width: 18px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+    line-height: 1 !important;
+    font-size: 14px !important;
+    color: #64748b !important;
+    position: static !important;
+    transform: none !important;
+  }
+
+  body.dark-theme .pagination-wrapper .pagination-dots {
+    color: #94a3b8 !important;
+  }
+}
