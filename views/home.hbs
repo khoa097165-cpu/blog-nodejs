@@ -1,54 +1,50 @@
 {{#unless isCategoryPage}}
 
-<section class="hero">
+{{#if blogs}}
+{{#with blogs.[0]}}
 
-    <div class="container">
+<section class="featured-news">
+    <div class="featured-container">
 
-        <div class="left">
+        <!-- BÊN TRÁI -->
+        <div class="featured-content">
 
-            <h1 class="h1">
-                Xin Chào <b>Đến Web Tin Tức.</b><br>
+            <div class="featured-label">
+                <span class="featured-dot"></span>
+                TIN NỔI BẬT
+            </div>
+
+            <h1 class="featured-title">
+                {{title}}
             </h1>
 
-            <div class="btn-group">
+            <p class="featured-description">
+                {{description}}
+            </p>
 
-                <a href="/contact" class="btn btn-primary">
-                    Liên hệ
-                </a>
-
-                <a href="/about" class="btn btn-secondary">
-                    Về tôi
-                </a>
-
-            </div>
+<div class="featured-buttons">
+    <a href="/blogs/{{slug}}" class="featured-btn featured-btn-primary">
+        Xem
+    </a>
+</div>
 
         </div>
 
-        <div class="right">
-
-            <div class="pattern-bg"></div>
-
-            <div class="img-box">
-
-                <img
-                    src="/img/namle1.png"
-                    alt="Nam Le"
-                    class="hero-img"
-                >
-
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-
-            </div>
-
+        <!-- BÊN PHẢI -->
+        <div class="featured-image">
+            <img src="{{image}}" alt="{{title}}">
         </div>
 
     </div>
-
 </section>
+
+{{/with}}
+{{/if}}
 
 {{/unless}}
 
+
+<!-- ================= DANH SÁCH BÀI VIẾT ================= -->
 
 <section class="blog">
 
@@ -62,6 +58,7 @@
             {{/if}}
         </h2>
 
+
         <div class="blog-card-group">
 
             {{#if blogs}}
@@ -70,6 +67,7 @@
 
                 <div class="blog-card">
 
+                    <!-- ẢNH -->
                     <div class="blog-card-banner">
 
                         <img
@@ -81,20 +79,26 @@
 
                     </div>
 
+
+                    <!-- NỘI DUNG -->
                     <div class="blog-content-wrapper">
 
                         <button class="blog-topic text-tiny">
                             {{this.category}}
                         </button>
 
+
                         <h3>
+
                             <a
                                 href="/blogs/{{this.slug}}"
                                 class="h3"
                             >
                                 {{this.name}}
                             </a>
+
                         </h3>
+
 
                         <p class="blog-text">
                             {{this.description}}
@@ -108,73 +112,75 @@
 
             {{else}}
 
-                <p>Không có bài viết nào thuộc chủ đề này.</p>
+                <p>
+                    Không có bài viết nào thuộc chủ đề này.
+                </p>
 
             {{/if}}
 
         </div>
 
 
-        {{#unless isCategoryPage}}
+        <!-- ================= PHÂN TRANG ================= -->
 
-        <!-- PHÂN TRANG TỰ ĐỘNG -->
+        {{#unless isCategoryPage}}
 
         {{#if totalPages}}
 
         <div class="pagination-wrapper">
 
-            <!-- NÚT TRƯỚC -->
+            <!-- TRANG TRƯỚC -->
             {{#if (gt currentPage 1)}}
 
-               <a
-    href="/?page={{subtract currentPage 1}}"
-    class="pagination-next"
-    aria-label="Trang trước"
->
-    ‹
-</a>
+            <a
+                href="/?page={{subtract currentPage 1}}"
+                class="pagination-next"
+                aria-label="Trang trước"
+            >
+                ‹
+            </a>
 
             {{/if}}
 
 
-            <!-- TRANG ĐẦU -->
+            <!-- TRANG 1 -->
             {{#if (gt currentPage 3)}}
 
-                <a
-                    href="/?page=1"
-                    class="pagination-btn"
-                >
-                    1
-                </a>
+            <a
+                href="/?page=1"
+                class="pagination-btn"
+            >
+                1
+            </a>
 
-                <span class="pagination-dots">
-                    ...
-                </span>
+            <span class="pagination-dots">
+                ...
+            </span>
 
             {{/if}}
 
 
-            <!-- CÁC TRANG GẦN TRANG HIỆN TẠI -->
+            <!-- TRANG GẦN HIỆN TẠI -->
 
             {{#each (paginationPages currentPage totalPages)}}
 
                 {{#if (eq this ../currentPage)}}
 
-                    <a
-                        href="/?page={{this}}"
-                        class="pagination-btn active"
-                    >
-                        {{this}}
-                    </a>
+                <a
+                    href="/?page={{this}}"
+                    class="pagination-btn active"
+                >
+                    {{this}}
+                </a>
 
                 {{else}}
 
-                    <a
-                        href="/?page={{this}}"
-                        class="pagination-btn"
-                    >
-                        {{this}}
-                    </a>
+                <a
+                    href="/?page={{this}}"
+                    class="pagination-btn"
+                >
+                    {{this}}
+                </a>
 
                 {{/if}}
 
@@ -185,31 +191,31 @@
 
             {{#if (lt currentPage (subtract totalPages 2))}}
 
-                <span class="pagination-dots">
-                    ...
-                </span>
+            <span class="pagination-dots">
+                ...
+            </span>
 
-                <a
-                    href="/?page={{totalPages}}"
-                    class="pagination-btn"
-                >
-                    {{totalPages}}
-                </a>
+            <a
+                href="/?page={{totalPages}}"
+                class="pagination-btn"
+            >
+                {{totalPages}}
+            </a>
 
             {{/if}}
 
 
-            <!-- NÚT SAU -->
+            <!-- TRANG SAU -->
 
             {{#if (lt currentPage totalPages)}}
 
-<a
-    href="/?page={{add currentPage 1}}"
-    class="pagination-next"
-    aria-label="Trang sau"
->
-    ›
-</a>
+            <a
+                href="/?page={{add currentPage 1}}"
+                class="pagination-next"
+                aria-label="Trang sau"
+            >
+                ›
+            </a>
 
             {{/if}}
 

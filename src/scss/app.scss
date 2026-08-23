@@ -3917,4 +3917,30 @@ body.dark-theme .form-container .card:hover {
         color: #f1f5f9 !important;
     }
 }
+body.dark .featured-container {
+    background: #202b3d !important;
+    border: 1px solid #334155 !important;
+}
+
+body.dark .featured-label {
+    background: #293b5c !important;
+    color: #7da2ff !important;
+}
+
+body.dark .featured-title,
+body.dark .featured-content h1,
+body.dark .featured-content h2 {
+    color: #f1f5f9 !important;
+}
+
+body.dark .featured-description,
+body.dark .featured-content > p {
+    color: #b8c4d6 !important;
+}
+
+body.dark .featured-btn-secondary,
+body.dark .featured-btn-outline {
+    color: #dbe5f5 !important;
+    border-color: #668cff !important;
+}
 }

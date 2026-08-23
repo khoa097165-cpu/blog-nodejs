@@ -3175,5 +3175,770 @@ footer .wrapper {
     color: #f1f5f9 !important;
   }
 }
+@media (max-width: 768px) {
+  /* =====================================================
+     TIN NỔI BẬT - DESKTOP
+  ===================================================== */
+  .featured-news {
+    width: 100%;
+    margin: 30px 0 45px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .featured-container {
+    width: calc(100% - 120px);
+    max-width: 1180px;
+    min-height: 340px;
+    margin: 0 auto;
+    padding: 30px 30px 30px 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 430px;
+    align-items: center;
+    gap: 35px;
+    background: #f3f7ff;
+    border-radius: 22px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .featured-content {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+  .featured-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 18px;
+    padding: 6px 11px;
+    background: #e8efff;
+    color: #3264e8;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .featured-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    border-radius: 50%;
+    background: #3264e8;
+  }
+  .featured-title,
+  .featured-content h1,
+  .featured-content h2 {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 0 15px;
+    padding: 0;
+    color: #1d2b48;
+    font-size: 31px;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+  .featured-description,
+  .featured-content > p {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 0 20px;
+    padding: 0;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.65;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+  .featured-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+  }
+  .featured-btn {
+    width: 150px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    border-radius: 24px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .featured-btn-primary {
+    background: #2864ed;
+    color: #fff;
+  }
+  .featured-btn-secondary,
+  .featured-btn-outline {
+    background: transparent;
+    color: #52617a;
+    border: 1px solid #7da2ff;
+  }
+  .featured-image {
+    width: 100%;
+    height: 310px;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .featured-image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .featured-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    border-radius: 18px;
+  }
+  /* =====================================================
+     DESKTOP NHỎ
+  ===================================================== */
+}
+@media (max-width: 768px) and (min-width: 769px) and (max-width: 1100px) {
+  .featured-container {
+    width: calc(100% - 50px);
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 25px;
+    padding: 25px;
+  }
+  .featured-title,
+  .featured-content h1,
+  .featured-content h2 {
+    font-size: 27px;
+  }
+  .featured-image {
+    height: 280px;
+  }
+}
+@media (max-width: 768px) {
+  /* =====================================================
+     MOBILE - GIỮ NGUYÊN
+  ===================================================== */
+}
+@media (max-width: 768px) and (max-width: 768px) {
+  .featured-news {
+    width: 100%;
+    margin: 20px 0 40px;
+    padding: 0 12px;
+  }
+  .featured-container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 18px;
+    border-radius: 20px;
+  }
+  .featured-content {
+    width: 100%;
+  }
+  .featured-label {
+    margin-bottom: 15px;
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  .featured-title {
+    max-width: none;
+    margin-bottom: 15px;
+    font-size: 27px;
+    line-height: 1.3;
+  }
+  .featured-description {
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-line-clamp: 4;
+  }
+  .featured-buttons {
+    width: 100%;
+    gap: 10px;
+  }
+  .featured-btn {
+    width: 50%;
+    height: 48px;
+    font-size: 14px;
+  }
+  .featured-image {
+    width: 100%;
+    height: auto;
+  }
+  .featured-image img {
+    width: 100%;
+    height: 250px;
+    border-radius: 18px;
+    object-fit: cover;
+  }
 
+/* =====================================================
+   TIN NỔI BẬT - DESKTOP
+===================================================== */
+
+.featured-news {
+    width: 100%;
+    margin: 30px 0 45px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.featured-container {
+    width: calc(100% - 120px);
+    max-width: 1180px;
+    min-height: 340px;
+
+    margin: 0 auto;
+    padding: 30px 30px 30px 40px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 430px;
+    align-items: center;
+    gap: 35px;
+
+    background: #f3f7ff;
+    border-radius: 22px;
+
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.featured-content {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.featured-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 18px;
+    padding: 6px 11px;
+
+    background: #e8efff;
+    color: #3264e8;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.featured-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+
+    border-radius: 50%;
+    background: #3264e8;
+}
+
+.featured-title,
+.featured-content h1,
+.featured-content h2 {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 0 15px;
+    padding: 0;
+
+    color: #1d2b48;
+
+    font-size: 31px;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.featured-description,
+.featured-content > p {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 0 20px;
+    padding: 0;
+
+    color: #64748b;
+
+    font-size: 15px;
+    line-height: 1.65;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.featured-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0;
+    padding: 0;
+}
+
+.featured-btn {
+    width: 150px;
+    height: 44px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 20px;
+
+    border-radius: 24px;
+    box-sizing: border-box;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.featured-btn-primary {
+    background: #2864ed;
+    color: #fff;
+}
+
+.featured-btn-secondary,
+.featured-btn-outline {
+    background: transparent;
+    color: #52617a;
+    border: 1px solid #7da2ff;
+}
+
+.featured-image {
+    width: 100%;
+    height: 310px;
+
+    margin: 0;
+    padding: 0;
+
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.featured-image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.featured-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+}
+
+
+/* =====================================================
+   DESKTOP NHỎ
+===================================================== */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    .featured-container {
+        width: calc(100% - 50px);
+
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 25px;
+
+        padding: 25px;
+    }
+
+    .featured-title,
+    .featured-content h1,
+    .featured-content h2 {
+        font-size: 27px;
+    }
+
+    .featured-image {
+        height: 280px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE - GIỮ NGUYÊN
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .featured-news {
+        width: 100%;
+        margin: 20px 0 40px;
+        padding: 0 12px;
+    }
+
+    .featured-container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        padding: 25px 18px;
+        border-radius: 20px;
+    }
+
+    .featured-content {
+        width: 100%;
+    }
+
+    .featured-label {
+        margin-bottom: 15px;
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .featured-title {
+        max-width: none;
+        margin-bottom: 15px;
+
+        font-size: 27px;
+        line-height: 1.3;
+    }
+
+    .featured-description {
+        margin-bottom: 20px;
+
+        font-size: 15px;
+        line-height: 1.6;
+
+        -webkit-line-clamp: 4;
+    }
+
+    .featured-buttons {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .featured-btn {
+        width: 50%;
+        height: 48px;
+        font-size: 14px;
+    }
+
+    .featured-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .featured-image img {
+        width: 100%;
+        height: 250px;
+
+        border-radius: 18px;
+        object-fit: cover;
+    }
+}
+}
+/* =========================================================
+   FIX TIN NOI BAT DESKTOP
+   CHI CHAY TREN DESKTOP - KHONG DUNG MOBILE
+========================================================= */
+
+@media (min-width: 769px) {
+
+    .featured-news {
+        display: block !important;
+        width: 100% !important;
+        margin: 30px 0 45px !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .featured-container {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 430px !important;
+
+        width: calc(100% - 120px) !important;
+        max-width: 1180px !important;
+        min-height: 340px !important;
+
+        margin: 0 auto !important;
+        padding: 30px 30px 30px 40px !important;
+
+        align-items: center !important;
+        gap: 35px !important;
+
+        background: #f3f7ff !important;
+        border-radius: 22px !important;
+
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .featured-content {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .featured-label {
+        display: inline-flex !important;
+        align-items: center !important;
+
+        width: auto !important;
+
+        gap: 7px !important;
+
+        margin: 0 0 18px !important;
+        padding: 6px 11px !important;
+
+        background: #e8efff !important;
+        color: #3264e8 !important;
+
+        border-radius: 8px !important;
+
+        font-size: 13px !important;
+        font-weight: 700 !important;
+    }
+
+    .featured-dot {
+        width: 7px !important;
+        height: 7px !important;
+        min-width: 7px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        border-radius: 50% !important;
+        background: #3264e8 !important;
+    }
+
+    .featured-title,
+    .featured-content h1,
+    .featured-content h2 {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 650px !important;
+
+        margin: 0 0 15px !important;
+        padding: 0 !important;
+
+        color: #1d2b48 !important;
+
+        font-size: 31px !important;
+        line-height: 1.25 !important;
+        font-weight: 700 !important;
+    }
+
+    .featured-description,
+    .featured-content > p {
+        display: -webkit-box !important;
+
+        width: 100% !important;
+        max-width: 650px !important;
+
+        margin: 0 0 20px !important;
+        padding: 0 !important;
+
+        color: #64748b !important;
+
+        font-size: 15px !important;
+        line-height: 1.65 !important;
+
+        -webkit-box-orient: vertical !important;
+        -webkit-line-clamp: 3 !important;
+
+        overflow: hidden !important;
+    }
+
+    .featured-buttons {
+        display: flex !important;
+        align-items: center !important;
+
+        width: 100% !important;
+
+        gap: 12px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .featured-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 150px !important;
+        height: 44px !important;
+
+        margin: 0 !important;
+        padding: 0 20px !important;
+
+        border-radius: 24px !important;
+
+        box-sizing: border-box !important;
+
+        text-decoration: none !important;
+
+        font-size: 14px !important;
+        font-weight: 600 !important;
+    }
+
+    .featured-btn-primary {
+        background: #2864ed !important;
+        color: #fff !important;
+        border: none !important;
+    }
+
+    .featured-btn-secondary,
+    .featured-btn-outline {
+        background: transparent !important;
+        color: #52617a !important;
+        border: 1px solid #7da2ff !important;
+    }
+
+    .featured-image {
+        display: block !important;
+
+        width: 100% !important;
+        height: 310px !important;
+
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .featured-image a {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .featured-image img {
+        display: block !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        object-fit: cover !important;
+
+        border-radius: 18px !important;
+
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP 769 - 1100
+========================================================= */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    .featured-container {
+        width: calc(100% - 50px) !important;
+
+        grid-template-columns: minmax(0, 1fr) 360px !important;
+
+        gap: 25px !important;
+
+        padding: 25px !important;
+    }
+
+    .featured-title,
+    .featured-content h1,
+    .featured-content h2 {
+        font-size: 27px !important;
+    }
+
+    .featured-image {
+        height: 280px !important;
+    }
+}
+@media (min-width: 769px) {
+    .featured-content {
+        transform: translateY(-30px);
+    }
+}
+@media (min-width: 769px) {
+    .featured-container {
+        width: 1100px !important;
+        max-width: calc(100% - 100px) !important;
+        margin: 0 auto !important;
+        left: 0 !important;
+    }
+}
+/* =====================================================
+   TIN NỔI BẬT - DARK THEME
+===================================================== */
+
+body.dark-theme .featured-container {
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+}
+
+/* Nhãn TIN NỔI BẬT */
+body.dark-theme .featured-label {
+    background: #263b63 !important;
+    color: #82a7ff !important;
+}
+
+body.dark-theme .featured-dot {
+    background: #5b8cff !important;
+}
+
+/* Tiêu đề */
+body.dark-theme .featured-title,
+body.dark-theme .featured-content h1,
+body.dark-theme .featured-content h2 {
+    color: #f8fafc !important;
+}
+
+/* Mô tả */
+body.dark-theme .featured-description,
+body.dark-theme .featured-content > p {
+    color: #b8c4d6 !important;
+}
+
+/* Nút */
+body.dark-theme .featured-btn-primary {
+    background: #3b6ff5 !important;
+    color: #fff !important;
+}
+
+body.dark-theme .featured-btn-secondary {
+    background: transparent !important;
+    color: #dbeafe !important;
+    border-color: #6d91ff !important;
+}
 /*# sourceMappingURL=app.css.map */
